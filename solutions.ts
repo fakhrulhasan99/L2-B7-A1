@@ -2,7 +2,7 @@
 // Solution 1
 
 function filterEvenNumbers(numbers: number[]) {
-    return numbers.filter(num => num % 2 === 0);
+  return numbers.filter(num => num % 2 === 0);
 }
 // console.log(filterEvenNumbers([1, 2, 3, 4, 5, 6]));
 
@@ -10,7 +10,7 @@ function filterEvenNumbers(numbers: number[]) {
 // Solution 2
 
 function reverseString(input: string) {
-    return input.split('').reverse().join('');
+  return input.split('').reverse().join('');
 };
 // console.log(reverseString("typescript"));
 
@@ -20,11 +20,11 @@ function reverseString(input: string) {
 type StringOrNumber = string | number;
 
 function checkType(value: StringOrNumber) {
-    if (typeof value === "string") {
-        return "String";
-    } else {
-        return "Number";
-    }
+  if (typeof value === "string") {
+    return "String";
+  } else {
+    return "Number";
+  }
 }
 // console.log(checkType("Hello"));
 // console.log(checkType(42));
@@ -33,7 +33,7 @@ function checkType(value: StringOrNumber) {
 // Solution 4
 
 function getProperty<T>(obj: T, key: keyof T) {
-    return obj[key];
+  return obj[key];
 };
 // const user = { id: 1, name: "John Doe", age: 21 };
 // console.log(getProperty(user, "name"));
@@ -53,11 +53,11 @@ function toggleReadStatus(book: Book): Book & { isRead: boolean } {
     isRead: true
   };
 };
-const myBook = {
-  title: "TypeScript Guide",
-  author: "Jane Doe",
-  publishedYear: 2024
-};
+// const myBook = {
+//   title: "TypeScript Guide",
+//   author: "Jane Doe",
+//   publishedYear: 2024
+// };
 // console.log(toggleReadStatus(myBook));
 
 
@@ -88,11 +88,10 @@ class Student extends Person {
 // const student = new Student("Alice", 20, "A");
 // console.log(student.getDetails());
 
-
 // Solution 7
 
 function getIntersection(arr1: number[], arr2: number[]) {
   const arr3 = new Set(arr1);
   return arr2.filter(num => arr3.has(num));
 }
-console.log(getIntersection([1,2,3,4,5], [3,4,5,6,7]));
+// console.log(getIntersection([1,2,3,4,5], [3,4,5,6,7]));
