@@ -25,7 +25,7 @@ function checkType(value: StringOrNumber) {
 
 // Solution 4
 
-function getProperty<T>(obj: T, key: keyof T) {
+function getProperty<T, K extends keyof T>(obj: T, key: K) {
   return obj[key];
 };
 
@@ -35,12 +35,13 @@ interface Book {
   title: string;
   author: string;
   publishedYear: number;
-};
+  isRead?: boolean;
+}
 
 function toggleReadStatus(book: Book): Book & { isRead: boolean } {
   return {
     ...book,
-    isRead: true
+    isRead: !book.isRead
   };
 };
 
@@ -74,4 +75,4 @@ class Student extends Person {
 function getIntersection(arr1: number[], arr2: number[]) {
   const arr3 = new Set(arr1);
   return arr2.filter(num => arr3.has(num));
-}
+};
