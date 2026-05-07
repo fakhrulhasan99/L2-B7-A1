@@ -41,7 +41,7 @@ interface Book {
 function toggleReadStatus(book: Book): Book & { isRead: boolean } {
   return {
     ...book,
-    isRead: !book.isRead
+    isRead: !(book.isRead ?? false)
   };
 };
 
@@ -73,6 +73,6 @@ class Student extends Person {
 // Solution 7
 
 function getIntersection(arr1: number[], arr2: number[]) {
-  const arr3 = new Set(arr1);
-  return arr2.filter(num => arr3.has(num));
+  const arr3 = new Set(arr2);
+  return arr1.filter(num => arr3.has(num));
 };
