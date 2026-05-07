@@ -1,18 +1,14 @@
-
 // Solution 1
-
 function filterEvenNumbers(numbers: number[]) {
   return numbers.filter(num => num % 2 === 0);
 }
 
 // Solution 2
-
 function reverseString(input: string) {
   return input.split('').reverse().join('');
 };
 
 // Solution 3
-
 type StringOrNumber = string | number;
 
 function checkType(value: StringOrNumber) {
@@ -24,13 +20,11 @@ function checkType(value: StringOrNumber) {
 }
 
 // Solution 4
-
 function getProperty<T, K extends keyof T>(obj: T, key: K) {
   return obj[key];
 };
 
 // Solution 5
-
 interface Book {
   title: string;
   author: string;
@@ -46,7 +40,6 @@ function toggleReadStatus(book: Book): Book & { isRead: boolean } {
 };
 
 // Solution 6
-
 class Person {
   name: string;
   age: number;
@@ -71,7 +64,6 @@ class Student extends Person {
 };
 
 // Solution 7
-
 function getIntersection(arr1: number[], arr2: number[]) {
   const arr3 = new Set(arr2);
   return arr1.filter(num => arr3.has(num));
