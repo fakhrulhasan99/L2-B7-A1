@@ -2,7 +2,10 @@
 
 ## Why is any labeled a "type safety hole," and why is unknown the safer choice for handling unpredictable data? Explain the concept of type narrowing.
 
-As we know Typescript is very similar to Javascript except it is more sensitive to data types and offers some extra syntaxes. Unlike JS it gives us error on the first place when we apply a wrong property to something which doesn't have that property even before we run the code.
+
+## Introduction
+
+As we know Typescript is very similar to Javascript except it is more sensitive to data types and offers some extra syntaxes. Unlike JS it gives us error on the first place when we apply a wrong property to something which doesn't have that property even before we run the code. Although they may seem similar, they behave very differently in terms of type safety.
 
 ### any
 The `any` type completely disables Typescript's type cheching method. Actually when we declare the type of a data as `any` Typescript starts to rely on us. Even invalid operations get compiled successfully. Such as:
@@ -43,3 +46,7 @@ if (typeof value === "string") {
     console.log(value.toUpperCase());
 }
 ```
+
+## Conclusion
+
+The `any` type removes TypeScript’s safety features and can lead to runtime errors because TypeScript no longer checks the data type. On the other hand, `unknown` provides a safer alternative by forcing developers to verify the type before using the value. Using type narrowing techniques like `typeof`, `instanceof`, and `Array.isArray()` helps make code more reliable, predictable, and type-safe.
