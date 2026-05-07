@@ -27,3 +27,19 @@ value.toUpperCase();
 Gives an error immediately.
 
 This is the main reason why `unknown` is safer choice that `any` for handling unpredictable data.
+
+### Type Narrowing
+Type narrowing means reducing a broad type into a more specific one using checks like:
+* `typeof`
+* `instanceof`
+* `Array.isArray()`
+
+This method makes code safer and more predictable. Such as:
+
+```tsx
+let value: unknown = "Hello";
+
+if (typeof value === "string") {
+    console.log(value.toUpperCase());
+}
+```
